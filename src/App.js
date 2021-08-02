@@ -1,13 +1,9 @@
-import React                from 'react'
+import React from 'react'
 
-import CitationWidget        from 'components/citation-widget'
+import CitationWidget from 'components/citation-widget'
 
-class App extends React.Component {
-  render() {
-    return (
-      <CitationWidget />
-    )
-  }
+const App = () => {
+  return <CitationWidget />
 }
 
 export default App
