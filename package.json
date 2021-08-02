@@ -2,12 +2,14 @@
   "name": "citation-widget",
   "version": "0.0.1",
   "main": "lib/index.js",
+  "author": "Yaroslav Vdovin",
   "dependencies": {
     "react": "^15.5.3",
     "react-dom": "^15.5.3"
   },
   "devDependencies": {
     "autoprefixer": "6.7.2",
+    "babel-cli": "^6.26.0",
     "babel-core": "6.22.1",
     "babel-eslint": "7.1.1",
     "babel-jest": "18.0.0",

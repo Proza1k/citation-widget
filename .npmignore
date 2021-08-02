@@ -1,0 +1,8 @@
+.prettierrc
+node_modules
+config/
+public/
+scripts/
+.babelrc
+.npmrc
+.github
