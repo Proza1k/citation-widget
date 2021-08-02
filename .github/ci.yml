@@ -1,0 +1,30 @@
+name: Frontend CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: ['**']
+
+jobs:
+  deployment:
+    timeout-minutes: 10
+    name: Build & Push npm package
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN  }}
+
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
